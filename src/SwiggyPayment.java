@@ -2,7 +2,7 @@ public interface SwiggyPayment {
 
     int accountBalance =10000;
 
-     String swiggypayment(int orderAmount);
+    public String swiggypayment(OrderProcess orderProcess, String nextProcess);
 
 
 }
