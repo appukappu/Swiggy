@@ -2,7 +2,6 @@ public class PhonePay implements SwiggyPayment {
     public String swiggypayment(OrderProcess orderProcess, String nextProcess){
         if (nextProcess.equals("confirm")){
             int remainBal=accountBalance- orderProcess.totalAmount;
-            System.out.println(remainBal);
             System.out.println("payed amount : " +orderProcess.totalAmount);
             System.out.println("payment successful remaining amount : " + remainBal );
         }else{
