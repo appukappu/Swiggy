@@ -1,7 +1,8 @@
 public class Coupons {
     public int amount;
     public int discount;
-    public String Couponsprocess(){
+    public String Couponsprocess(OrderProcess orderProcess){
+        amount = orderProcess.totalAmount;
         if(amount>500 && amount<1000){
             double discount;
             discount = amount* 0.2;
