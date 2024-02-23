@@ -6,11 +6,13 @@ public abstract class SwiggyLogin {
         this.username = username;
         this.password = password;
     }
-
     public abstract boolean login();
-
     public String getUsername() {
         return username;
+    }
+
+    public String getPassword() {
+        return password;
     }
     @Override
     public String toString() {
@@ -18,9 +20,5 @@ public abstract class SwiggyLogin {
                 "username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 '}';
-    }
-
-    public String getPassword() {
-        return password;
     }
 }

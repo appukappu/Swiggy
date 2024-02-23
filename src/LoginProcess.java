@@ -8,12 +8,12 @@ public class LoginProcess extends SwiggyLogin {
     @Override
     public boolean login() {
         if(localusername.equals(getUsername()) && localpassword.equals(getPassword())){
-            System.out.println("Swiggylogin successful");
+            System.out.println("Swiggy login successful");
         }
         else{
-            System.out.println("Swiggylogin failed Try again");
+            System.out.println("Swiggy login failed Try again");
         }
-        return false;
+        return true;
     }
 }
 
