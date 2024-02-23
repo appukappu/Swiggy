@@ -10,4 +10,4 @@ public class Test {
     }
 
 }
->>>>>>>>> Temporary merge branch 2
+
