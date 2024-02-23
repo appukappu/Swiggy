@@ -6,7 +6,7 @@ public class Test {
         Coupons coupons = new Coupons();
         coupons.Couponsprocess(orderProcess);
         PhonePay phonePay= new PhonePay();
-        phonePay.swiggypayment(orderProcess,"confirm"); // if you want to cancel type cancel
+        phonePay.swiggypayment(coupons,"confirm"); // if you want to cancel type cancel
     }
 
 }
