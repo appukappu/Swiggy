@@ -1,16 +1,23 @@
 public class PhonePay implements SwiggyPayment {
+    int accountBalance =10000;
+    int remaingBal;
     public String swiggypayment(Coupons coupons, String nextProcess){
+
         if (nextProcess.equals("confirm")){
-            int remainBal=accountBalance- coupons.amount;
-            System.out.println("payed amount : " + coupons.amount);
-            System.out.println("payment successful remaining amount : " + remainBal );
-        }else{
+
+            remaingBal=accountBalance- coupons.amount;
+
+            System.out.println("payed amount :  " + coupons.amount +
+                    "  payment successful remaining amount : " + remaingBal );
+        }
+        else{
+
             System.out.println("your cancellation is sucessfull");
-            System.out.println("your total amount  : " +accountBalance);
+
+            int newaccountBalance = remaingBal + coupons.amount;
+
+            System.out.println("your total amount  : " +newaccountBalance);
         }
         return "insufficient  balance";
     }
-//    public  String payment (OrderProcess orderProcess){
-//        orderProcess.totalAmount = this.swiggypayment()
-//    }
-}
+ }
