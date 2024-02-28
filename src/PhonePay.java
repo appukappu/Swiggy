@@ -1,6 +1,6 @@
 public class PhonePay implements SwiggyPayment {
     int accountBalance =10000;
-    int remaingBal = accountBalance;
+    double remaingBal = accountBalance;
     String  localnextProcess ="confirm";
     String statusCode ;
     String paymentStatus = "success";
@@ -8,7 +8,7 @@ public class PhonePay implements SwiggyPayment {
 
         if (nextProcess.equals(localnextProcess)){
 
-            remaingBal= accountBalance - coupons.amount;
+            remaingBal= accountBalance - coupons.finalAmount;
 
             System.out.println("payed amount :  " + coupons.amount +
 
@@ -16,25 +16,27 @@ public class PhonePay implements SwiggyPayment {
         }
         else{
 
-            System.out.println("your cancellation is successful ");
 
-            int newAccountBalance = remaingBal + coupons.amount;
+            double newAccountBalance = remaingBal + coupons.finalAmount;
 
             System.out.println("your total amount  : " +newAccountBalance);
         }
+        System.out.println("your cancellation is successful ");
+
 
         return "insufficient  balance";
     }
-    public  String  paymentStatus(String nextProcess){
-        if (nextProcess.equals(paymentStatus)){
-            statusCode = "200";
+    public  String  paymentStatus(String paymentStatus){
+
+        if (paymentStatus.equals(this.paymentStatus)){
+
             System.out.println(" your payment is successfully its ready to delver ");
-            return statusCode;
+            return statusCode = "200";
         }else {
-            statusCode = "404";
+
             System.out.println("your payment is failed try different method ");
         }
-        return  statusCode;
+        return  statusCode = "404";
 
 
         }

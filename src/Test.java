@@ -5,15 +5,19 @@ public class Test {
 
         OrderProcess orderProcess = new OrderProcess(loginProcess,4,"biryani","Chicken65");
 
+
         orderProcess.processOrderTest();
 
         Coupons coupons = new Coupons();
 
-        coupons.Couponsprocess(orderProcess);
+        coupons.couponsprocess(orderProcess);
+
 
         PhonePay phonePay= new PhonePay();
 
-        phonePay.swiggypayment(coupons,"confirm"); // if you want to cancel type cancel
+        phonePay.swiggypayment(coupons,"confir"); // if you want to cancel type cancel
+
+        phonePay.paymentStatus("success");
 
         Delivery delivery = new Delivery();
 
