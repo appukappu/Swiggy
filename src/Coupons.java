@@ -2,8 +2,8 @@ public class Coupons {
     public int amount;
     public  double discount;;
 
-
     public String Couponsprocess(OrderProcess orderProcess){
+
         amount = orderProcess.totalAmount;
 
         if(amount>500 && amount<1000){
@@ -17,7 +17,7 @@ public class Coupons {
 
         }
         if(amount>1000){
-            double discount;
+
             discount = amount* 0.3;
 
             amount= (int) (amount-discount);
@@ -26,9 +26,9 @@ public class Coupons {
                     + "  your final amount to pay  : "+amount);
         }
         else{
-            System.out.println("below 500 no discount");
+            System.out.println("below 500 no discount ");
         }
 
-        return "select your order";
+        return "select your order ";
     }
 }

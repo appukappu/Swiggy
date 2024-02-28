@@ -1,6 +1,6 @@
 public class OrderProcess extends OrderItems {
     LoginProcess loginProcess;
-    public OrderProcess(int noOfOrders, String biryani, String starters,LoginProcess loginProcess) {
+    public OrderProcess(LoginProcess loginProcess,int noOfOrders, String biryani, String starters) {
         super(noOfOrders, biryani, starters);
         this.loginProcess = loginProcess;
 
@@ -8,11 +8,7 @@ public class OrderProcess extends OrderItems {
     public OrderProcess(int noOfOrders, String biryani, String starters) {
         super(noOfOrders, biryani, starters);
     }
-
     int totalAmount = 0;
-
-
-
     public String processOrderTest() {
         if (loginProcess.login()) {
             if (biryani != null) {

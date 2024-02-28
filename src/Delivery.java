@@ -1,12 +1,18 @@
 public class Delivery {
     String localStatus = "delivered";
-    public  String delivaryStatus(String status,PhonePay phonePay){
-        phonePay.swiggypayment(new Coupons(),"con");
-        if(localStatus.equals(status)){
-            System.out.println("your swiggy order is sucessfull delvered  ");
-        }else
-            System.out.println( " your order is faild to delivered");
-        return "provide your delivary ststus ";
-    }
 
+    int venderAmount = 5000;
+
+    public  String delivaryStatus(String status,PhonePay phonePay){
+
+      if  (phonePay.statusCode.equals("200")){
+
+            if (localStatus.equals(status)) {
+
+                System.out.println("your swiggy order is successful delivered ");
+            } else
+                System.out.println(" your order is failed to delivered ");
+        }
+        return "provide your delivery status ";
+    }
 }
