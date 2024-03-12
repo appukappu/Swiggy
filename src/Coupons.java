@@ -6,15 +6,15 @@ public class Coupons {
     public String couponsprocess(OrderProcess orderProcess){
 
 
-        amount = orderProcess.totalAmount;
+      //  amount = orderProcess.totalAmount;
 
-        if(amount>500 && amount<1000){
+        if(orderProcess.totalAmount>500 && orderProcess.totalAmount<=1000){
 
-            discount = amount* 0.2;
+            discount = orderProcess.totalAmount* 0.2;
         }
-        else if(amount>1000) {
+        else if(orderProcess.totalAmount>1000) {
 
-            discount = amount * 0.3;
+            discount = orderProcess.totalAmount * 0.3;
         }
 
         else{
@@ -24,11 +24,13 @@ public class Coupons {
 
       //  amount= (int) (amount-discount);
 
-        finalAmount  = amount - discount;
+        finalAmount  = orderProcess.totalAmount - discount;
 
         if (discount > 0) {
-            System.out.println("---Your discount amount: " + discount + " from total amount: " + amount +
-                    " Your final amount to pay: " + finalAmount);
+            System.out.println("Your discount amount: " + discount );
+           // System.out.println(" from total amount: " + orderProcess.totalAmount);
+            System.out.println( " Your final amount to pay: " + finalAmount);
+
         }
 
 

@@ -2,7 +2,7 @@ public interface SwiggyPayment {
 
 
 
-    public String swiggypayment(Coupons coupons, String nextProcess);
+    public String swiggypayment(Coupons coupons, String nextProcess) throws SwiggyException;
 
 
 }

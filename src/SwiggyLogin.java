@@ -6,7 +6,7 @@ public abstract class SwiggyLogin {
         this.username = username;
         this.password = password;
     }
-    public abstract boolean login();
+    public abstract boolean login() throws SwiggyException;
     public String getUsername() {
         return username;
     }

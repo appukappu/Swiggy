@@ -11,7 +11,7 @@ public class OrderProcess extends OrderItems {
         super(noOfOrders, biryani, starters);
     }
     int totalAmount = 0;
-    public String processOrderTest() {
+    public String processOrderTest() throws SwiggyException {
 
         if (loginProcess.login()) {
             if (biryani != null) {
@@ -20,16 +20,17 @@ public class OrderProcess extends OrderItems {
             }
             if (starters != null) {
                 startersTotalAmount = startersCost * noOfOrders;
-               // System.out.println("Starters Amount: " + startersTotalAmount);
             }
 
             totalAmount = biryanitotalAmount + startersTotalAmount;
-            System.out.println("Total Amount: == " + totalAmount +"  total birayani amount : " + biryanitotalAmount
-            +"  starters amount : " + startersTotalAmount);
+
+            System.out.println("Total Biryani Amount : " + biryanitotalAmount);
+            System.out.println("Starters Amount : " + startersTotalAmount);
+            System.out.println("Total Amount  :  " + totalAmount);
             return " Your Order is Processed. Total Amount : " + totalAmount;
 
         } else {
-            return "  Select Payment Method. ";
+            return "  enter valid credentials. ";
         }
     }
 }
